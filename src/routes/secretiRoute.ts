@@ -16,6 +16,7 @@ export async function SecretiRoute(app: FastifyInstance) {
     const SecretiRequestSchema = z.object({
       secret: string(),
     })
+
     try {
       const { secret } = SecretiRequestSchema.parse(request.body)
 
