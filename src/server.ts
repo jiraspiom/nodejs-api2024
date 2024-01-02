@@ -11,7 +11,7 @@ app.register(cors, {
 })
 
 app.register(jwt, {
-  secret: 'apiteste',
+  secret: 'apitestebemtestadoporquetemdesertestadomuitomesmoantesdedarerro',
 })
 
 app.register(SecretiRoute)
