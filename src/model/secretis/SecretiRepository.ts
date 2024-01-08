@@ -1,6 +1,6 @@
 import Secreti from './Secreti'
 
-class SecretiRepository {
+export class SecretiRepository {
   private secretos: Secreti[]
 
   constructor() {
@@ -11,16 +11,10 @@ class SecretiRepository {
     return this.secretos
   }
 
-  create(secreto: Secreti): void {
-    this.adicionarRegistro(secreto)
-  }
-
-  private adicionarRegistro(secreto: Secreti): void {
+  create(secreto: Secreti) {
     this.secretos.push(secreto)
     if (this.secretos.length > 88) {
       this.secretos.shift()
     }
   }
 }
-
-export = SecretiRepository

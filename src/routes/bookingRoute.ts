@@ -31,7 +31,7 @@ export async function BookingRoute(app: FastifyInstance) {
   })
 
   app.get('/api/booking', (request, reply) => {
-    const bookin = bookingRepository.findAll()
+    const bookin = bookingService.findAllBookings()
     reply.code(201).send(bookin)
   })
 }
