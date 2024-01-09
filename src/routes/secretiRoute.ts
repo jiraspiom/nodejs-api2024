@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify'
-import SecretiRepository from '../model/secretis/SecretiRepository'
 import SecretiService from '../model/secretis/SecretiService'
 import { z, string } from 'zod'
+import { SecretiRepository } from '../model/secretis/SecretiRepository'
 
 const secretiRepository = new SecretiRepository()
 const secretiService = new SecretiService(secretiRepository)

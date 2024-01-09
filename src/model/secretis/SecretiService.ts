@@ -1,5 +1,5 @@
 import Secreti from './Secreti'
-import SecretiRepository from './SecretiRepository'
+import { SecretiRepository } from './SecretiRepository'
 
 class SecretiService {
   private repository: SecretiRepository
