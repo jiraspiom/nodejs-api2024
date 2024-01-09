@@ -16,20 +16,14 @@ export async function SecredoRoute(app: FastifyInstance) {
     const SecretiRequestSchema = z.object({
       segredo: string(),
       cor: string(),
-      urlImage: string(),
     })
 
     try {
-      const urlgato = await fetch('https://cataas.com/cat?json=true')
-
-      const { _id } = await urlgato.json()
-
       const secret = SecretiRequestSchema.parse(request.body)
 
-      const secreti = secretiService.createSecredo(secret)
-      secreti.urlImage = `https://cataas.com/cat/${_id}`
+      const retorno = await secretiService.createSecredo(secret)
 
-      reply.code(201).send({ message: 'criado', secreti })
+      reply.code(201).send({ message: 'criado', retorno })
     } catch (error) {
       reply.code(400).send({ message: 'erro de validacao', error })
     }
