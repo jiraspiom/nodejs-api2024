@@ -8,7 +8,7 @@ const secretiService = new SecredoService(secretiRepository)
 
 export async function SecredoRoute(app: FastifyInstance) {
   app.get('/api/secredo', async (request, reply) => {
-    const secretis = secretiService.findAllSecredos()
+    const secretis = secretiService.findAllSecredos().reverse()
     reply.code(201).send(secretis)
   })
 
